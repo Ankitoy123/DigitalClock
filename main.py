@@ -1,0 +1,21 @@
+from tkinter import *
+import time as t
+def clock():
+  now = t.strftime("%H:%M:%S %P")
+  label.config(text=now)
+  date = t.strftime("%d %B,%Y")
+  label1.config(text=date)
+  day = t.strftime(" %A")
+  label2.config(text=day)
+  label.after(1000, clock)
+root = Tk()
+root.title("Digital Clock")
+root.config(bg="gray")
+label = Label(root, font=('Helvetica', 40), fg='red', bg='gray')
+label.pack()
+label1 = Label(root, font=('Cambria', 40), fg='red', bg='gray')
+label1.pack()
+label2 = Label(root, font=('Cambria', 40), fg='red', bg='gray')
+label2.pack()
+clock()
+root.mainloop()
